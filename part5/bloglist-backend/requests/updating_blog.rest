@@ -1,0 +1,11 @@
+PUT http://localhost:3001/api/blogs/6718c9fc7c4ff4b81c90b9b6
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhvbGEiLCJpZCI6IjY3MjBjNDhlMjc0N2NlMjRlNWE0YmI0OSIsImlhdCI6MTczMDcwODYyOH0.yDqpCIpUMA2ZbUvKbOdjEK6QEkboW5FnUOn3TeQChGM
+
+{
+  "user": "6718c9fc7c4ff4b81c90b9b9",
+  "title": "Blog 2 Updated",
+  "author": "Author 2",
+  "url": "http://example.com/blog1-updated",
+  "likes": 15
+}
