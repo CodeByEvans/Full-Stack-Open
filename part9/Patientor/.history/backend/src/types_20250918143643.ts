@@ -27,6 +27,7 @@ export interface BaseEntry {
   specialist: string;
   description: string;
   diagnosisCodes?: Array<Diagnose["code"]>;
+  sickLeave?: sickLeave;
   healthCheckRating?: HealthCheckRating;
   employerName?: string;
 }

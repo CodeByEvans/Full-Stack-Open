@@ -1,5 +1,5 @@
 import express from "express";
-import { Entry, PatientEntry } from "../types";
+import { PatientEntry } from "../types";
 import patientsService from "../services/patientsService";
 import toNewPatient from "../utils";
 
@@ -21,24 +21,6 @@ router.post("/", (req, res) => {
     if (error instanceof Error) {
       errorMessage += "Error: " + error.message;
     }
-    res.status(400).send(errorMessage);
-  }
-});
-
-router.get("/:id", (req, res) => {
-  const patient = patientsService.getPatientById(req.params.id);
-  res.json(patient);
-});
-
-router.post("/:id/entries", (req, res) => {
-  try {
-    const patientId = req.params.id;
-    const newEntry: Entry = req.body;
-    const addedEntry = patientsService.addEntry(patientId, newEntry);
-    res.json(addedEntry);
-  } catch (e: unknown) {
-    let errorMessage = "Something went wrong.";
-    if (e instanceof Error) errorMessage += " Error: " + e.message;
     res.status(400).send(errorMessage);
   }
 });
